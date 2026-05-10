@@ -1,0 +1,20 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "claude-codex-mirror",
+  "description": "Cross-vendor mirror: invoke Codex CLI as an external auditor for brainstorm, plan calibration, and diff review. Built on the principle that another model is a mirror, not a sub-agent.",
+  "owner": {
+    "name": "falcon75423-ui"
+  },
+  "metadata": {
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "co",
+      "source": "./plugins/co",
+      "description": "Three co-* commands (/co-brainstorm, /co-calibrate-plan, /co-review-diff) for cross-vendor LLM review via Codex.",
+      "version": "0.1.0",
+      "category": "development"
+    }
+  ]
+}
