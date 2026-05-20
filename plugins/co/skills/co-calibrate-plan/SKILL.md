@@ -1,6 +1,6 @@
 ---
 name: co-calibrate-plan
-description: Cross-vendor plan calibration via Codex. Use when user is at the planning stage of a task and wants to leverage an external LLM as a peer planner or critic. Auto-routes by argument: no argument = parallel-planning mode (Codex independently drafts an alternative plan, Claude does too, compare); with plan-file path = review mode (Codex audits the existing plan, Claude does too, compare). Always uses anti-anchoring (Codex says ready first, shares only after Claude finishes its own version). Triggers when user types "/co-calibrate-plan", "/co-calibrate-plan <plan-file>", or says "calibrate this plan", "have codex review my plan", "second opinion on plan", "find holes in plan", "parallel plan", "他山看一下計畫", "plan 找漏洞", or wants cross-vendor critique before finalizing a plan.
+description: Cross-vendor plan calibration via Codex MCP. Use at the planning stage to leverage an external LLM as peer planner or critic. Auto-routes by argument: no arg = parallel-planning mode (Codex drafts an alternative plan in parallel; compare); plan-file path = review mode (Codex audits the existing plan; compare). Anti-anchoring: each side finishes its own version before sharing. Triggers when user types "/co-calibrate-plan", "/co-calibrate-plan <plan-file>", or says "calibrate this plan", "have codex review my plan", "second opinion on plan", "find holes in plan", "parallel plan", "他山看一下計畫", "plan 找漏洞".
 ---
 
 # /co-calibrate-plan — 計畫期跨 vendor 對撞
