@@ -1,6 +1,6 @@
 {
   "name": "co",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Co-* commands for cross-vendor mirror review via Codex (MCP for brainstorm/calibrate, CLI for diff review).",
   "author": {
     "name": "falcon75423-ui"
