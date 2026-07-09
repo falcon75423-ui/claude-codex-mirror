@@ -57,7 +57,7 @@ references/
 
 | # | Rule |
 |---|------|
-| 1 | Codex always read-only (MCP `sandbox: "read-only"` + `approval-policy: "never"`; CLI `--sandbox read-only --approval-policy never --skip-git-repo-check 2>/dev/null`) |
+| 1 | Codex always read-only (MCP `sandbox: "read-only"` + `approval-policy: "never"`; CLI `--profile co_mirror --skip-git-repo-check 2>co_err.txt` — profile lives at `~/.codex/co_mirror.config.toml` (codex ≥0.144 standalone-file format); never write sandbox/approval as CLI flags, never discard stderr) |
 | 2 | Codex output verbatim — Claude must NOT summarize, translate, or auto-apply |
 | 3 | Treat Codex as a senior peer in opposition, not authority — verify every point |
 | 4 | Exit-gate soft reminder printed at end of every command |

@@ -50,7 +50,7 @@ Topic: $ARGUMENTS
 | `sandbox` | `"read-only"` |
 | `cwd` | 目前的 working directory |
 
-> approval 行為由 `~/.codex/config.toml` 的 `[profiles.co_mirror]` 治理（`approval_policy = "never"`）。不要把它當 MCP 參數寫死——本地 codex 設定一處掌管所有 mirror 呼叫，避免 codex CLI 升版時各處要改。
+> approval 行為由本地 profile 檔 `~/.codex/co_mirror.config.toml`（codex ≥0.144 新格式：獨立檔、頂層鍵值）治理（`approval_policy = "never"`）。不要把它當 MCP 參數寫死——本地 codex 設定一處掌管所有 mirror 呼叫，避免 codex CLI 升版時各處要改。
 
 Subagent 處理 codex 來回通信。如果 codex 問澄清問題（不回 `BRAINSTORM_READY`），subagent 用自己判斷 + codebase context 回答，直到 codex 完成思考並回 `BRAINSTORM_READY`。
 
@@ -123,7 +123,7 @@ Subagent 處理 codex 來回通信。如果 codex 問澄清問題（不回 `BRAI
 
 | # | 紅線 |
 |---|------|
-| 1 | Codex 端永遠 `sandbox: read-only`；approval 行為由本地 `[profiles.co_mirror]` 治理（禁止寫成 MCP 參數）|
+| 1 | Codex 端永遠 `sandbox: read-only`；approval 行為由本地 co_mirror profile 檔（`~/.codex/co_mirror.config.toml`）治理（禁止寫成 MCP 參數）|
 | 2 | Codex 結論 verbatim，禁止 Claude 摘要 / 翻譯 / 自動採納 |
 | 3 | Codex 是資深同儕對手戲不是權威——逐條驗證 |
 | 4 | 退場閘門軟提醒每次必印 |

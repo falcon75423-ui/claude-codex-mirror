@@ -210,7 +210,7 @@ References: OWASP LLM01, [arxiv 2510.23675](https://arxiv.org/abs/2510.23675), [
 | MCP tool not found in session | Verify exact server name `validate-plans-and-brainstorm-ideas` in `~/.claude.json`, restart Claude Code |
 | Commands not appearing | Restart Claude Code, verify skill folders at `~/.claude/skills/` (or marketplace install completed) |
 | `codex: command not found` for `/co-review-diff` | Install Codex CLI globally (`npm install -g @openai/codex`) or edit SKILL.md to use `npx -y @openai/codex exec` |
-| Codex review hangs / silent | Check OpenAI API key configured; check `2>/dev/null` is suppressing thinking-token noise; temporarily remove `2>/dev/null` to see errors |
+| Codex review hangs / silent | Check OpenAI API key configured; read the stderr file (`co_err.txt`) — config / auth / profile errors go to stderr, so discarding stderr turns fatal errors into silent zero output. After a Codex CLI upgrade, smoke-test first: `echo test \| codex exec --profile co_mirror --skip-git-repo-check` |
 | Diff too large, Codex token limit hit | Split by file: `git diff <base>...HEAD -- path/to/specific/file` |
 | `JSON parse errors` in `~/.claude.json` | Validate your JSON (check commas and braces) |
 
